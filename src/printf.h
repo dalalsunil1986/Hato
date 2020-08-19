@@ -1,5 +1,5 @@
 #pragma once
 
-void print(const char* msg);
+void printf(const char* msg);
 
 
