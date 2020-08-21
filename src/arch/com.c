@@ -1,5 +1,5 @@
 #include "x86.h"
-#include "com.h"
+#include "arch/com.h"
 
 #define PORT 0x3f8 /* COM 1 */
 

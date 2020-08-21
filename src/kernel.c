@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <stivale.h>
-#include "com.h"
-#include "printf.h"
+#include "arch/com.h"
+#include "arch/printf.h"
 
 #define VGA_ADDRESS 0xb8000
 #define VGA_COLOR(character, color) ((uint16_t) (character) | (uint16_t) (color) << 8)
