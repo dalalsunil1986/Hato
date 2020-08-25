@@ -46,7 +46,7 @@ void _start(struct stivale_struct *bootloader_data) {
     vga_buffer[3] = VGA_COLOR('l', VGA_GREEN);
     vga_buffer[4] = VGA_COLOR('o', VGA_GREEN);
     init_serial();
-    printf("hello world \n");
+    printf("Kernel initialized. \n");
     asm volatile ("hlt");
     
 }
