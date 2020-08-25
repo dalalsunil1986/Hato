@@ -1,5 +1,9 @@
 #include "gdt.h"
 #include "arch/com.h"
+#include "printf.h"
 
-gdt_initializating();
+void gdt_initializating(void)
+{
+    printf("GDT Initialized \n");
+}
 
