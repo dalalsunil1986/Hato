@@ -1,6 +1,10 @@
 #pragma once
+#include <stdint.h>
 
-struct gdt_pointer{
+void gdt_initializating(void);
+
+struct gdt_pointer
+{
     uint16_t limit;
     uint64_t base;
 } __attribute__((packed));
