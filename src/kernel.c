@@ -2,6 +2,7 @@
 #include <stivale.h>
 #include "arch/com.h"
 #include "arch/printf.h"
+#include "gdt/gdt.h"
 
 #define VGA_ADDRESS 0xb8000
 #define VGA_COLOR(character, color) ((uint16_t) (character) | (uint16_t) (color) << 8)
@@ -47,6 +48,7 @@ void _start(struct stivale_struct *bootloader_data) {
     vga_buffer[4] = VGA_COLOR('o', VGA_GREEN);
     init_serial();
     printf("Kernel initialized. \n");
+    gdt_initializating();
     asm volatile ("hlt");
     
 }

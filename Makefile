@@ -18,7 +18,8 @@ CHARDFLAGS := $(CFLAGS) -Wall -Wextra -Werror               \
 	-ffreestanding                 \
 	-fno-stack-protector           \
 	-fno-omit-frame-pointer        \
-	-Isrc/                       \
+	-Isrc/arch/                       \
+	-Isrc/							
 
 LDHARDFLAGS := $(LDFLAGS)        \
 	-nostdlib                 \
