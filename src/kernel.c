@@ -3,6 +3,7 @@
 #include "arch/com.h"
 #include "arch/printf.h"
 #include "gdt/gdt.h"
+#include "idt/idt.h"
 
 #define VGA_ADDRESS 0xb8000
 #define VGA_COLOR(character, color) ((uint16_t) (character) | (uint16_t) (color) << 8)
@@ -49,6 +50,7 @@ void _start(struct stivale_struct *bootloader_data) {
     init_serial();
     printf("Kernel initialized. \n");
     gdt_initializating();
+    idt_initializating();
     asm volatile ("hlt");
     
 }
