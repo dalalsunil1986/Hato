@@ -1,6 +1,7 @@
 CFILES    := $(shell find src/ -type f -name '*.c')
 CC         = gcc
 LD         = ld
+# NASM	   = nasm
 OBJ       := $(CFILES:.c=.o)
 KERNEL_HDD = build/disk.hdd
 KERNEL_ELF = kernel.elf
@@ -18,8 +19,8 @@ CHARDFLAGS := $(CFLAGS) -Wall -Wextra -Werror               \
 	-ffreestanding                 \
 	-fno-stack-protector           \
 	-fno-omit-frame-pointer        \
-	-Isrc/arch/                       \
-	-Isrc/							
+	-Isrc/arch/                    \
+	-Isrc/						   \
 
 LDHARDFLAGS := $(LDFLAGS)        \
 	-nostdlib                 \
@@ -35,6 +36,9 @@ disk: $(KERNEL_HDD)
 
 %.o: %.c
 	$(CC) $(CHARDFLAGS) -c $< -o $@
+
+%.s.o: %.s
+    $(AS) $(ASBIN) -o $@ $^
 
 $(KERNEL_ELF): $(OBJ)
 	$(LD) $(LDHARDFLAGS) $(OBJ) -o $@

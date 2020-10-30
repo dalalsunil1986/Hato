@@ -1,4 +1,3 @@
-#include "printf.h"
 #include "idt.h"
 #include "irq.s"
 #include "arch/com.h"
