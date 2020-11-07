@@ -1,5 +1,4 @@
 #include "idt.h"
-#include "irq.s"
 #include "arch/com.h"
 #include "arch/x86.h"
 
@@ -150,7 +149,7 @@ void idt_initializating(void)
     /* fill the IDT descriptor */
     unsigned long idt_address = (unsigned long)IDT;
     unsigned int idt_ptr[2];
-    idt_ptr[0] = (sizeof (struct IDT_entry) * 256) + ((idt_address & 0xffff) << 16);
+    idt_ptr[0] = (sizeof(struct IDT_entry) * 256) + ((idt_address & 0xffff) << 16);
     idt_ptr[1] = idt_address >> 16;
 
     load_idt(idt_ptr);
@@ -243,8 +242,3 @@ void irq15_handler(void)
     outb(0xA0, 0x20);
     outb(0x20, 0x20); // EOI
 }
-
-
-
-
-

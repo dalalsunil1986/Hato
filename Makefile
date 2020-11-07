@@ -1,33 +1,28 @@
-CFILES    := $(shell find src/ -type f -name '*.c')
+CFILES 		:= $(shell find src/ -type f -name '*.c')
 ASMFILES	:= $(shell find src/ -type f -name '*.s')
-CC         = gcc
-NASM		= nasm
-LD         = ld
-OBJ       := $(CFILES:.c=.o) $(ASMFILES:.s=.s.o)
-KERNEL_HDD = build/disk.hdd
-KERNEL_ELF = kernel.elf
+CC			= gcc
+AS			= nasm
+LD			= ld
+OBJ			:= $(CFILES:.c=.c.o) $(ASMFILES:.s=.s.o)
+KERNEL_HDD 	= build/disk.hdd
+KERNEL_ELF 	= kernel.elf
 
-CHARDFLAGS := $(CFLAGS) -Wall -Wextra -Werror               \
-	-DBUILD_TIME='"$(BUILD_TIME)"' \
+CFLAGS :=						   \
+  	-Wall						   \
+	-Wextra						   \
+	-Werror           			   \
 	-std=gnu11                     \
-	-fno-pic                       \
-	-mno-sse                       \
-	-mno-sse2                      \
-	-mno-mmx                       \
-	-mno-80387                     \
-	-mno-red-zone                  \
-	-mcmodel=kernel                \
 	-ffreestanding                 \
-	-fno-stack-protector           \
-	-fno-omit-frame-pointer        \
 	-Isrc/arch/                    \
 	-Isrc/						   \
 
-LDHARDFLAGS := $(LDFLAGS)        \
+LDHARDFLAGS := 			      \
 	-nostdlib                 \
-	-no-pie                   \
 	-z max-page-size=0x1000   \
 	-T src/linker.ld
+
+ASFLAGS :=					  \
+		-f elf64
 
 .PHONY: clean
 .DEFAULT_GOAL = $(KERNEL_HDD)
@@ -35,11 +30,11 @@ LDHARDFLAGS := $(LDFLAGS)        \
 disk: $(KERNEL_HDD)
 	qemu-system-x86_64 -m 2G -hda $(KERNEL_HDD)
 
-%.o: %.c
-	$(CC) $(CHARDFLAGS) -c $< -o $@
+%.c.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-%.o: %.s
-	$(NASM) -o $@ $^
+%.s.o: %.s
+	$(AS) $(ASFLAGS) -o $@ $^
 
 $(KERNEL_ELF): $(OBJ)
 	$(LD) $(LDHARDFLAGS) $(OBJ) -o $@
