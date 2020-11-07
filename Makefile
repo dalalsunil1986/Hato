@@ -1,8 +1,9 @@
 CFILES    := $(shell find src/ -type f -name '*.c')
+ASMFILES	:= $(shell find src/ -type f -name '*.s')
 CC         = gcc
+NASM		= nasm
 LD         = ld
-# NASM	   = nasm
-OBJ       := $(CFILES:.c=.o)
+OBJ       := $(CFILES:.c=.o) $(ASMFILES:.s=.s.o)
 KERNEL_HDD = build/disk.hdd
 KERNEL_ELF = kernel.elf
 
@@ -37,8 +38,8 @@ disk: $(KERNEL_HDD)
 %.o: %.c
 	$(CC) $(CHARDFLAGS) -c $< -o $@
 
-%.s.o: %.s
-    $(AS) $(ASBIN) -o $@ $^
+%.o: %.s
+	$(NASM) -o $@ $^
 
 $(KERNEL_ELF): $(OBJ)
 	$(LD) $(LDHARDFLAGS) $(OBJ) -o $@
