@@ -1,9 +1,9 @@
-# Hato
-Welcome on the official Hato kernel repository.
+# Hāto
+Welcome on the official Hāto kernel repository.
 
-+ What is Hato ?
++ What is Hāto ?
 
-Hato (hearth in japanesse) is a 64 bits kernel. The goal of project is to create a base-kernel for any operating systems.
+Hāto (hearth in japanesse) is a 64 bits kernel. The goal of project is to create a base-kernel for any operating systems.
 
 + How I can contribute ?
 
