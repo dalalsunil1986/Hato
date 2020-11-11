@@ -1,3 +1,6 @@
+; Cette IRQ ne marche pas car elle contient des instructions incompatible pour le mode long (64 bits)
+; This IRQ doesn't work because she can contain instructions not supported by long mode (x64)
+
 global irq0
 global irq1
 global irq2
@@ -35,104 +38,328 @@ extern irq14_handler
 extern irq15_handler
 
 irq0:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq0_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq1:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq1_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
     
 irq2:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq2_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq3:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq3_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq4:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq4_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq5:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq5_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq6:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq6_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq7:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq7_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq8:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq8_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq9:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq9_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq10:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq10_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq11:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq11_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq12:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq12_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq13:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq13_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq14:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq14_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 irq15:
-    pusha
+    push rax
+    push rbx
+    push rcx
+    push rdx
+    push rbp
+    push rsp
+    push rsi
+    push rdi
     call irq15_handler
-    popa
+    pop rax
+    pop rbx
+    pop rcx
+    pop rdx
+    pop rbp
+    pop rsp
+    pop rsi
+    pop rdi
     iret
 
 load_idt:
-    mov edx, [esp + 4]
-    lidt [edx]
+    mov rdx, [rsp + 4]
+    lidt [rdx]
     sti
     ret
 

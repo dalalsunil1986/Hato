@@ -1,4 +1,4 @@
-#pragma once
+#pragma once                    // Je sais, c'est pas ouf de l'utiliser :p | I know, it's not ok to use it :p
 
 #include <stdint.h>
 

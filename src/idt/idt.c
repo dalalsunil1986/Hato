@@ -1,6 +1,6 @@
-#include "idt.h"
-#include "arch/com.h"
-#include "arch/x86.h"
+#include "idt.h"            // Fichier d'entête de l'IDT | IDT header file
+#include "arch/com.h"       // Afficher le résultat au débogage | Print the result during the debug
+#include "arch/x86.h"       // Pour le x86 | For x86
 
 void idt_initializating(void)
 {

@@ -1,6 +1,6 @@
 /*
 ========================================================================================
-En vrai elle est pas complète et utilse #pragma once qui askip est totalement useless.
+En vrai elle est pas complète et utilse #pragma once qui askip est totalement bloat.
 Mais bon considérons que je suis débutant et que je peux améliorer ce code plus tard.
 En attendant cette gdt n'est pas forcément fonctionelle à 100%
 ========================================================================================
