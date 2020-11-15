@@ -14,6 +14,7 @@ CFLAGS :=						   \
 	-std=gnu11                     \
 	-ffreestanding                 \
 	-Isrc/arch/                    \
+	-Isrc/devices/					\
 	-Isrc/						   \
 
 LDHARDFLAGS := 			      \
