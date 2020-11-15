@@ -12,6 +12,9 @@ void gdt_initializating(void)
 
 void encodeGdtEntry(uint8_t *target, struct GDT source)
 {
+
+    gdt_initializating();
+
     if ((source.limit > 65536) && ((source.limit & 0xFFF) != 0xFFF))
     {
         printf("You can't do that! \n");
