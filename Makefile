@@ -55,5 +55,4 @@ clean:
 
 run: $(KERNEL_HDD)
 	# @VBoxManage.exe -q startvm --putenv VBOX_GUI_DBG_ENABLED=true Hato
-	@qemu-system-i386.exe -q startvm -putenv
 	@nc localhost 1234
