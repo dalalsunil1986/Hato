@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "devices/x86.h"
+#include "arch/debug/x86.h"
 #include <stddef.h>
 #include <stdint.h>
 

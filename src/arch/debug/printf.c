@@ -1,5 +1,5 @@
-#include "devices/printf.h"
-#include "devices/com.h"
+#include "printf.h"
+#include "com.h"
 #include <stddef.h>
 
 void printf(const char* msg)
