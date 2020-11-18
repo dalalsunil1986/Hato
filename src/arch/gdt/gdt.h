@@ -8,7 +8,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-void init_gdt();
+void hatoGlobalDescriptorTable_init();
+
+void hatoGlobalDescriptorTable_load();
 
 struct gdt_pointer
 {

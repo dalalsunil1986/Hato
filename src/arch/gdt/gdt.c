@@ -1,7 +1,5 @@
-#include "arch/gdt.h"
+#include "arch/gdt/gdt.h"
 
-init_gdt(void)
-{
-    
-}
+
+
 

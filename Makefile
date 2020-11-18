@@ -54,5 +54,7 @@ clean:
 	-rm -f $(KERNEL_HDD) $(KERNEL_ELF) $(OBJ)
 
 run: $(KERNEL_HDD)
-	# @VBoxManage.exe -q startvm --putenv VBOX_GUI_DBG_ENABLED=true Hato
+	@virtualbox.exe -q startvm --putenv VBOX_GUI_DBG_ENABLED=true Hato
 	@nc localhost 1234
+
+# pour start le disk.hdd
