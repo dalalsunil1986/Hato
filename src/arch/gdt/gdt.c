@@ -1,4 +1,5 @@
 #include "arch/gdt/gdt.h"
+#include "arch/debug/printf.h"
 
 #include <stdint.h>
 
@@ -32,6 +33,10 @@ void hatoGlobalDescriptorTable_load()
                  :
                  :
                  : "rax", "memory");
+    
+    
+    
+    printf("GDT initialized. \n");
 }
 
 void hatoGlobalDescriptorTable_init()
