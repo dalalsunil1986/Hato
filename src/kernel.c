@@ -27,7 +27,7 @@
  */
 static char stack[4096] = {0};
 
-__attribute__((section(".stivalehdr"), used))
+__attribute__((section(".stivalehdr"), used));
 struct stivale_header header = {
     .stack = (uintptr_t)stack + sizeof(stack),
     .framebuffer_bpp = 0,

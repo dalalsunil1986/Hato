@@ -28,7 +28,7 @@ ASFLAGS :=					  \
 .DEFAULT_GOAL = $(KERNEL_HDD)
 
 disk: $(KERNEL_HDD)
-	qemu-system-x86_64 -m 2G -hda $(KERNEL_HDD)
+	qemu-system-i686 -m 2G -hda $(KERNEL_HDD)
 
 %.c.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -53,7 +53,7 @@ clean:
 	-rm -f $(KERNEL_HDD) $(KERNEL_ELF) $(OBJ)
 
 run: $(KERNEL_HDD)
-	@virtualbox.exe -q startvm --putenv VBOX_GUI_DBG_ENABLED=true Hato
+	qemu-system-i686
 	@nc localhost 1234
 
 # pour start le disk.hdd
