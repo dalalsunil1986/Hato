@@ -8,34 +8,8 @@ struct gdt_pointer gdtr = { .limit = sizeof(struct gdt_descriptor) - 1, .base = 
 
 void hatoGlobalDescriptorTable_load()
 {
-    asm volatile("lgdt %0"
-                 :
-                 : "m"(gdtr)
-                 :
-                 : "memory");
-
-    asm volatile(R"(
-        mov %%rsp, %%rax
-        push $0x10
-        push %%rax
-        pushf
-        push $0x08
-        push $1f
-        iretq
-        1:
-        mov $0x10, %%ax
-        mov %%ax, %%ds
-        mov %%ax, %%es
-        mov %%ax, %%ss
-        mov %%ax, %%fs
-        mov %%ax, %%gs
-    )"
-                 :
-                 :
-                 : "rax", "memory");
-    
-    
-    
+    extern void hatogdtload();
+        
     printf("GDT initialized. \n");
 }
 

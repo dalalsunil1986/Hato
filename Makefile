@@ -47,13 +47,13 @@ $(KERNEL_HDD): $(KERNEL_ELF)
 	echfs-utils -m -p0 $(KERNEL_HDD) quick-format 32768
 	echfs-utils -m -p0 $(KERNEL_HDD) import $(KERNEL_ELF) $(KERNEL_ELF)
 	echfs-utils -m -p0 $(KERNEL_HDD) import qloader2.cfg qloader2.cfg
-	qloader2/qloader2-install qloader2/qloader2.bin $(KERNEL_HDD)
+	qloader2/limine-install qloader2/limine.bin $(KERNEL_HDD)
 
 clean:
 	-rm -f $(KERNEL_HDD) $(KERNEL_ELF) $(OBJ)
 
 run: $(KERNEL_HDD)
-	qemu-system-i686
+	/mnt/c/"Program Files"/qemu/qemu-system-x86_64.exe build/disk.hdd
 	@nc localhost 1234
 
 # pour start le disk.hdd
