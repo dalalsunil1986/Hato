@@ -46,7 +46,7 @@ $(KERNEL_HDD): $(KERNEL_ELF)
 	parted -s $(KERNEL_HDD) mkpart primary 1 100%
 	echfs-utils -m -p0 $(KERNEL_HDD) quick-format 32768
 	echfs-utils -m -p0 $(KERNEL_HDD) import $(KERNEL_ELF) $(KERNEL_ELF)
-	echfs-utils -m -p0 $(KERNEL_HDD) import qloader2.cfg qloader2.cfg
+	echfs-utils -m -p0 $(KERNEL_HDD) import limine.cfg limine.cfg
 	qloader2/limine-install qloader2/limine.bin $(KERNEL_HDD)
 
 clean:
