@@ -41,11 +41,10 @@ void _start(struct stivale_struct * bootloader_data)
 {
     (void)bootloader_data;
     volatile uint16_t* vga_buffer = (uint16_t*)VGA_ADDRESS;
-    vga_buffer[0] = VGA_COLOR('h', VGA_BLUE);
-    vga_buffer[1] = VGA_COLOR('e', VGA_BLUE);
-    vga_buffer[2] = VGA_COLOR('l', VGA_BLUE);
-    vga_buffer[3] = VGA_COLOR('l', VGA_BLUE);
-    vga_buffer[4] = VGA_COLOR('o', VGA_BLUE);
+    vga_buffer[0] = VGA_COLOR('h', VGA_WHITE);
+    vga_buffer[1] = VGA_COLOR('a', VGA_WHITE);
+    vga_buffer[2] = VGA_COLOR('t', VGA_WHITE);
+    vga_buffer[3] = VGA_COLOR('o', VGA_WHITE);
     init_serial();
     hatoGlobalDescriptorTable_init();
     printf("Kernel initialized. \n");

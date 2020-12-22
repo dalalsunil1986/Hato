@@ -10,7 +10,7 @@ void hatoGlobalDescriptorTable_load()
 {
     extern void hatogdtload();
         
-    printf("GDT initialized. \n");
+    // printf("GDT initialized. \n");
 }
 
 void hatoGlobalDescriptorTable_init()
@@ -19,4 +19,5 @@ void hatoGlobalDescriptorTable_init()
     gdt[2] = (struct gdt_descriptor) { .access = 0b10010010, .granularity = 0 };
 
     hatoGlobalDescriptorTable_load();
+    printf("GDT initialized. \n");
 }
