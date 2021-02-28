@@ -47,7 +47,7 @@ $(KERNEL_HDD): $(KERNEL_ELF)
 	echfs-utils -m -p0 $(KERNEL_HDD) quick-format 32768
 	echfs-utils -m -p0 $(KERNEL_HDD) import $(KERNEL_ELF) $(KERNEL_ELF)
 	echfs-utils -m -p0 $(KERNEL_HDD) import limine.cfg limine.cfg
-	qloader2/limine-install qloader2/limine.bin $(KERNEL_HDD)
+	limine/limine-install limine/limine.bin $(KERNEL_HDD)
 
 clean:
 	-rm -f $(KERNEL_HDD) $(KERNEL_ELF) $(OBJ)

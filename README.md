@@ -1,13 +1,15 @@
-![banner](imgPresentation/hatoLogo.png)
+![banner](imgPresentation/logo_test1.png)
+
 Hāto Kernel logo
 
-![logo](imgPresentation/maindoLogo.png)
+![logo](imgPresentation/maindo.png)
+
 Maindo Operating System logo
 
 # Hāto
 Welcome on the official Hāto kernel repository.
 
-+ What is Hāto ?
+### What is Hāto ?
 
 Hāto (hearth in japanesse) is a 64 bits kernel. The goal of project is to create a base-kernel for any operating systems.
 
@@ -22,7 +24,7 @@ For more informations, check this discord server : (In construction...)
 
 Hāto is the base of Maindo Operating System
 
-+ What is Maindo ?
+### What is Maindo ?
 
 Maindo (spirit in japanesse) is a 64 bits operating system. It's just a simple OS :)
 
