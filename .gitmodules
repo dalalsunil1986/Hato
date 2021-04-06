@@ -1,6 +1,0 @@
-[submodule "qloader2"]
-	path = qloader2
-	url = https://github.com/qloader2/qloader2
-[submodule "limine"]
-	path = limine
-	url = https://github.com/limine-bootloader/limine
